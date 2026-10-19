@@ -266,10 +266,12 @@ export async function refreshMetrics(
           lastSuccess: now,
         });
         delete source.lastError;
+        delete source.manualSnapshot;
         results.push({ source: key, outcome: "success" });
       } catch (error) {
         // Never write remote response bodies, URLs with credentials, or raw error messages.
-        source.status = source.lastSuccess ? "stale" : "unavailable";
+        source.status =
+          source.lastSuccess || source.manualSnapshot ? "stale" : "unavailable";
         source.lastError =
           error instanceof MetricsError ? error.code : "unexpected_error";
         results.push({

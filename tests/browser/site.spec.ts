@@ -126,3 +126,19 @@ test("all content and links remain available without JavaScript", async ({
   await expect(page.locator(".publication-controls")).toBeHidden();
   await context.close();
 });
+
+test("manual h-index snapshots stay separate from live OpenAlex metrics", async ({
+  page,
+}) => {
+  await page.goto("./");
+  const sources = page.locator(".metric-source");
+  await expect(sources).toHaveCount(3);
+  await expect(sources.nth(0)).toContainText("Scopus");
+  await expect(sources.nth(0).locator("dd")).toHaveText("4");
+  await expect(sources.nth(0)).toContainText("Manual snapshot");
+  await expect(sources.nth(1)).toContainText("Web of Science");
+  await expect(sources.nth(1).locator("dd")).toHaveText("2");
+  await expect(sources.nth(2)).toContainText("OpenAlex");
+  await expect(sources.nth(2)).toContainText("API updated");
+  await expect(sources.nth(2).locator("dd")).toHaveCount(3);
+});

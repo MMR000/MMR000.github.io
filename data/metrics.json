@@ -7,14 +7,19 @@
       "identity": {
         "authorId": "59535935600"
       },
-      "status": "not_configured",
+      "status": "manual",
       "metrics": {
-        "hIndex": null,
+        "hIndex": 4,
         "citations": null,
         "publications": null
       },
       "lastSuccess": null,
-      "lastAttempt": null
+      "lastAttempt": null,
+      "manualSnapshot": {
+        "asOf": "2026-10-20",
+        "providedBy": "owner",
+        "fields": ["hIndex"]
+      }
     },
     "webOfScience": {
       "label": "Web of Science",
@@ -22,14 +27,19 @@
       "identity": {
         "researcherId": "NAX-9175-2025"
       },
-      "status": "not_configured",
+      "status": "manual",
       "metrics": {
-        "hIndex": null,
+        "hIndex": 2,
         "citations": null,
         "publications": null
       },
       "lastSuccess": null,
-      "lastAttempt": null
+      "lastAttempt": null,
+      "manualSnapshot": {
+        "asOf": "2026-10-20",
+        "providedBy": "owner",
+        "fields": ["hIndex"]
+      }
     },
     "openalex": {
       "label": "OpenAlex",

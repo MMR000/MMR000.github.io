@@ -113,31 +113,47 @@ function publication(p, index) {
     <div class="pub-meta">${external(sourceUrl, sourceLabel, "source-badge")}${p.doi ? `<span class="doi">DOI: ${e(p.doi)}</span>` : '<span class="doi">Publisher record</span>'}</div>
     </article></li>`;
 }
-function renderMetrics(data, asOf) {
+export function renderMetrics(data, asOf) {
   const sources = Object.values(data.sources);
+  const isCount = (value) => Number.isSafeInteger(value) && value >= 0;
   const available = sources.filter(
-    (s) =>
-      s.lastSuccess &&
-      Object.values(s.metrics).every((v) => Number.isSafeInteger(v) && v >= 0),
+    (source) =>
+      (source.lastSuccess || source.manualSnapshot?.asOf) &&
+      Object.values(source.metrics).every(
+        (value) => value === null || isCount(value),
+      ) &&
+      Object.values(source.metrics).some(isCount),
   );
+  const sourceDescription = (source) => {
+    if (source.manualSnapshot)
+      return `The h-index was provided by the site owner on ${dateLabel(source.manualSnapshot.asOf)}. It is a manual snapshot, not an API-verified value. Citation and publication totals are not published. Authorized API access is required for automatic updates.`;
+    if (source.lastSuccess)
+      return `These figures are from ${e(source.label)} only. ${source.status === "stale" ? "A refresh failed; the last successful snapshot is retained." : "Refreshed weekly through the official API."}`;
+    return source.label === "OpenAlex"
+      ? "No verified metrics are currently published."
+      : "Citation counts and h-index are not published until a dated snapshot or authorized API access is available.";
+  };
   return `${
     available.length
       ? `<aside class="metrics" aria-label="Source-specific research metrics">${available
-          .map(
-            (s) =>
-              `<div class="metric-source"><div class="metric-title">${external(s.profileUrl, e(s.label))}<span>${s.status === "stale" ? "Last successful update" : "Updated"} ${dateLabel(s.lastSuccess)}</span></div><dl>${Object.entries(
-                s.metrics,
+          .map((source) => {
+            const timestamp = source.manualSnapshot
+              ? `Manual snapshot · ${dateLabel(source.manualSnapshot.asOf)}`
+              : `${source.status === "stale" ? "Last API update" : "API updated"} ${dateLabel(source.lastSuccess)}`;
+            return `<div class="metric-source"><div class="metric-title">${external(source.profileUrl, e(source.label))}<span>${timestamp}</span></div><dl>${Object.entries(
+              source.metrics,
+            )
+              .filter(([, value]) => isCount(value))
+              .map(
+                ([key, value]) =>
+                  `<div><dt>${key === "hIndex" ? "h-index" : key === "citations" ? (source.label === "Web of Science" ? "Times Cited" : "Citations") : source.label === "OpenAlex" ? "Works" : "Publications"}</dt><dd>${value.toLocaleString("en-US")}</dd></div>`,
               )
-                .map(
-                  ([key, value]) =>
-                    `<div><dt>${key === "hIndex" ? "h-index" : key === "citations" ? (s.label === "Web of Science" ? "Times Cited" : "Citations") : s.label === "OpenAlex" ? "Works" : "Publications"}</dt><dd>${value.toLocaleString("en-US")}</dd></div>`,
-                )
-                .join("")}</dl></div>`,
-          )
+              .join("")}</dl></div>`;
+          })
           .join("")}</aside>`
       : ""
   }
-  <details class="source-notes"><summary>About the records and metrics <span aria-hidden="true">+</span></summary><div class="source-notes-body"><p>The bibliography combines ORCID records with a supplied Scopus export; records were reconciled on ${dateLabel(asOf)}. “Scopus export” identifies a record in that supplied file; it is not a live indexed-publication count. ORCID alone does not establish indexing in Scopus or Web of Science.</p><div class="source-columns">${sources.map((s) => `<div><h4>${e(s.label)}</h4><p>${s.lastSuccess ? `These figures are from ${e(s.label)} only. ${s.status === "stale" ? "A refresh failed; the last successful snapshot is retained." : "Refreshed weekly through the official API."}` : s.label === "OpenAlex" ? "No verified metrics are currently published." : "Citation counts and h-index are not published until authorized API access is configured."}</p></div>`).join("")}</div><p>Counts from different databases have different coverage and are never combined. Publication metadata and source-specific date differences are documented in the ${external("https://github.com/MMR000/mamyraltaibek.github.io/blob/main/docs/DATA_PROVENANCE.md", "data notes")}.</p></div></details>`;
+  <details class="source-notes"><summary>About the records and metrics <span aria-hidden="true">+</span></summary><div class="source-notes-body"><p>The bibliography combines ORCID records with a supplied Scopus export; records were reconciled on ${dateLabel(asOf)}. “Scopus export” identifies a record in that supplied file; it is not a live indexed-publication count. ORCID alone does not establish indexing in Scopus or Web of Science.</p><div class="source-columns">${sources.map((source) => `<div><h4>${e(source.label)}</h4><p>${sourceDescription(source)}</p></div>`).join("")}</div><p>Counts from different databases have different coverage and are never combined. Publication metadata and source-specific date differences are documented in the ${external("https://github.com/MMR000/mamyraltaibek.github.io/blob/main/docs/DATA_PROVENANCE.md", "data notes")}.</p></div></details>`;
 }
 export async function renderSite() {
   const readJson = async (path) =>

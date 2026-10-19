@@ -91,6 +91,90 @@ const allEnabled = {
   WOS_API_KEY: "wos-secret",
 };
 
+const manualSnapshot = () => {
+  const data = snapshot();
+  for (const [key, hIndex] of [
+    ["scopus", 7],
+    ["webOfScience", 6],
+  ]) {
+    Object.assign(data.sources[key], {
+      metrics: { hIndex, citations: null, publications: null },
+      status: "manual",
+      lastSuccess: null,
+      lastAttempt: null,
+      manualSnapshot: {
+        asOf: "2026-10-18",
+        providedBy: "owner",
+        fields: ["hIndex"],
+      },
+    });
+  }
+  return data;
+};
+
+test("skipped sources retain manual values and their original provenance", async () => {
+  const original = manualSnapshot();
+  const result = await refreshMetrics(original, {
+    profile,
+    knownDois,
+    now,
+    env: { OPENALEX_METRICS_ENABLED: "false" },
+    fetchImpl: () =>
+      assert.fail("No credentials or authorization were supplied"),
+  });
+  assert.deepEqual(result.snapshot, original);
+  assert.ok(result.results.every((source) => source.outcome === "skipped"));
+});
+
+test("failed authorized requests preserve manual values and dates as stale", async () => {
+  const original = manualSnapshot();
+  const result = await refreshMetrics(original, {
+    profile,
+    knownDois,
+    now,
+    env: { ...allEnabled, OPENALEX_METRICS_ENABLED: "false" },
+    fetchImpl: async (url) => {
+      if (url.includes("elsevier")) return response({}, 403);
+      throw new Error("Network unavailable");
+    },
+  });
+  for (const key of ["scopus", "webOfScience"]) {
+    const source = result.snapshot.sources[key];
+    assert.equal(source.status, "stale");
+    assert.equal(source.lastSuccess, null);
+    assert.equal(source.lastAttempt, now);
+    assert.deepEqual(source.metrics, original.sources[key].metrics);
+    assert.deepEqual(
+      source.manualSnapshot,
+      original.sources[key].manualSnapshot,
+    );
+  }
+  assert.deepEqual(original, manualSnapshot());
+  assert.deepEqual(result.snapshot.sources.openalex, original.sources.openalex);
+});
+
+test("successful authorized API results fully replace manual snapshots", async () => {
+  const original = manualSnapshot();
+  original.sources.scopus.lastError = "http_403";
+  const result = await refreshMetrics(original, {
+    profile,
+    knownDois,
+    now,
+    env: { ...allEnabled, OPENALEX_METRICS_ENABLED: "false" },
+    fetchImpl: async (url) => response(url.includes("elsevier") ? scopus : wos),
+  });
+  for (const key of ["scopus", "webOfScience"]) {
+    const source = result.snapshot.sources[key];
+    assert.equal(source.status, "current");
+    assert.equal(source.lastSuccess, now);
+    assert.equal(source.lastAttempt, now);
+    assert.deepEqual(source.metrics, values);
+    assert.equal(Object.hasOwn(source, "manualSnapshot"), false);
+    assert.equal(Object.hasOwn(source, "lastError"), false);
+  }
+  assert.deepEqual(result.snapshot.sources.openalex, original.sources.openalex);
+});
+
 test("all source adapters map their own documented fields", () => {
   assert.deepEqual(
     parseScopus(scopus, profile.scopus_author_id).metrics,

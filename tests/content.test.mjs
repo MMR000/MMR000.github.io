@@ -7,6 +7,7 @@ import {
   validatePublications,
   toBibtex,
   renderSite,
+  renderMetrics,
   BASE,
   SITE,
 } from "../scripts/render-site.mjs";
@@ -89,4 +90,32 @@ test("generated HTML includes full SEO-visible content and project-base assets",
     "utf8",
   );
   assert.equal((bib.match(/^@/gm) || []).length, 20);
+});
+
+test("manual metrics show only provided figures with their own date and source", () => {
+  const html = renderMetrics(
+    {
+      sources: {
+        scopus: {
+          label: "Scopus",
+          profileUrl:
+            "https://www.scopus.com/authid/detail.uri?authorId=59535935600",
+          metrics: { hIndex: 4, citations: null, publications: null },
+          status: "manual",
+          lastSuccess: null,
+          manualSnapshot: {
+            asOf: "2026-10-20",
+            providedBy: "owner",
+            fields: ["hIndex"],
+          },
+        },
+      },
+    },
+    "2026-10-19",
+  );
+  assert.ok(html.includes("Manual snapshot · 20 Oct 2026"));
+  assert.ok(html.includes("<dd>4</dd>"));
+  assert.ok(!html.includes("<dt>Citations</dt>"));
+  assert.ok(!html.includes("<dd>0</dd>"));
+  assert.ok(html.includes("not an API-verified value"));
 });

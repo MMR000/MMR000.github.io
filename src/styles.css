@@ -201,10 +201,10 @@ nav a[aria-current]::after {
   display: none;
 }
 .hero {
-  padding-top: 60px;
+  padding-top: 38px;
   display: grid;
-  grid-template-columns: 1fr 170px;
-  column-gap: 75px;
+  grid-template-columns: 1fr 150px;
+  column-gap: 60px;
 }
 .eyebrow {
   font-size: 11px;
@@ -216,24 +216,24 @@ nav a[aria-current]::after {
 }
 h1 {
   font-family: var(--serif);
-  font-size: clamp(55px, 6.2vw, 82px);
+  font-size: clamp(50px, 5.7vw, 72px);
   font-weight: 400;
-  line-height: 1.08;
+  line-height: 1.04;
   letter-spacing: -0.04em;
-  margin: 18px 0 14px;
+  margin: 12px 0 8px;
 }
 .name-period {
   color: var(--accent);
 }
 .hero-position {
-  font-size: 19px;
+  font-size: 18px;
   letter-spacing: -0.03em;
 }
 .hero-affiliation {
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.6;
   color: var(--secondary);
-  margin-top: 12px;
+  margin-top: 8px;
 }
 .text-link {
   display: inline-flex;
@@ -246,7 +246,7 @@ h1 {
   padding: 0;
 }
 .hero .text-link {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .text-link span {
   font-size: 19px;
@@ -255,12 +255,12 @@ h1 {
   text-decoration: underline;
 }
 .portrait {
-  padding-top: 22px;
+  padding-top: 0;
 }
 .portrait img {
   display: block;
-  width: 160px;
-  height: 214px;
+  width: 140px;
+  height: 187px;
   object-fit: cover;
   object-position: center;
   border-radius: 2px;
@@ -270,7 +270,7 @@ h1 {
   font-size: 10px;
   letter-spacing: 0.11em;
   color: var(--secondary);
-  margin-top: 14px;
+  margin-top: 10px;
   text-transform: uppercase;
 }
 .profile-links {
@@ -279,8 +279,8 @@ h1 {
   flex-wrap: wrap;
   gap: 30px;
   border-top: 1px solid var(--line);
-  margin-top: 36px;
-  padding: 18px 0;
+  margin-top: 24px;
+  padding: 15px 0;
 }
 .profile-links a {
   display: inline-flex;
@@ -622,20 +622,22 @@ h1 {
   margin-bottom: 9px;
 }
 .metrics {
-  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 24px;
+  margin-top: 26px;
   border-top: 1px solid var(--line);
   padding-top: 24px;
 }
 .metric-source + .metric-source {
-  margin-top: 25px;
-  padding-top: 25px;
-  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  padding-left: 24px;
 }
 .metric-title {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
 }
 .metric-title a {
   display: inline-flex;
@@ -644,13 +646,13 @@ h1 {
   font-size: 12px;
 }
 .metric-title span {
-  font-size: 10px;
+  font-size: 9px;
   color: var(--secondary);
 }
 .metric-source dl {
   display: flex;
-  gap: 50px;
-  margin: 20px 0 0;
+  gap: 24px;
+  margin: 16px 0 0;
 }
 .metric-source dl > div {
   display: flex;
@@ -719,10 +721,10 @@ h1 {
 }
 @media (min-width: 1450px) {
   .hero {
-    padding-top: 64px;
+    padding-top: 40px;
   }
   .hero .profile-links {
-    margin-top: 40px;
+    margin-top: 26px;
   }
 }
 @media (max-width: 1000px) {
@@ -732,7 +734,7 @@ h1 {
   }
   .hero {
     column-gap: 35px;
-    padding-top: 48px;
+    padding-top: 32px;
   }
   .section {
     grid-template-columns: 155px 1fr;
@@ -803,9 +805,9 @@ h1 {
     padding-block: 9px;
   }
   .hero {
-    padding-top: 30px;
+    padding-top: 24px;
     grid-template-columns: 1fr 108px;
-    gap: 18px;
+    gap: 12px;
   }
   .hero-intro {
     display: contents;
@@ -818,7 +820,7 @@ h1 {
   h1 {
     grid-column: 1;
     grid-row: 2;
-    font-size: 48px;
+    font-size: 44px;
     margin: 0;
     line-height: 1.02;
     align-self: center;
@@ -1007,6 +1009,19 @@ h1 {
   }
   .metric-title {
     align-items: start;
+  }
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .metric-source + .metric-source {
+    padding-left: 16px;
+  }
+  .metric-source:last-child:nth-child(3) {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 18px 0 0;
   }
   .metric-title span {
     font-size: 9px;

@@ -6,7 +6,13 @@ The site keeps Scopus, Web of Science, and OpenAlex in separate records in `data
 
 OpenAlex is enabled. The initial official API lookup matched ORCID `0009-0002-8219-0751` to author `A5115648231`, Mamyr Altaibek, with ENU affiliation. A second API request confirmed author attribution for 19 DOIs also present in the supplied bibliography. The exact retrieval date, values, identity, and a compact DOI audit trail are stored in `data/metrics.json`.
 
-Scopus and Web of Science have no configured credentials. Their values are `null` and must not be presented as zero. No export-derived citation count or invented h-index is used. Their API adapters are implemented and tested against synthetic fixtures following the official response schemas; live credentialed calls remain unverified until the owner supplies authorized access.
+The owner supplied a Scopus h-index of 4 and a Web of Science h-index of 2 on 20 October 2026 (local date). These are separate, dated manual snapshots, not API-verified values. Their citation and publication counts remain `null` and must not be presented as zero. No export-derived citation count or invented h-index is used. Scopus and Web of Science have no configured credentials; their API adapters are implemented and tested against synthetic fixtures following the official response schemas, but live credentialed calls remain unverified until the owner supplies authorized access.
+
+## Owner-provided manual snapshots
+
+For a value explicitly supplied by the owner, edit only its source in `data/metrics.json`. Set `status` to `manual`, put the supplied nonnegative integer in its metric field, leave unsupplied fields `null`, and leave `lastSuccess` as `null`. Add `manualSnapshot` with an accurate `asOf` date in `YYYY-MM-DD` form, `providedBy: "owner"`, and a `fields` array naming exactly the supplied fields, such as `["hIndex"]`. This provenance must be shown with the metric; it does not establish API verification or authorization to call a restricted API. Remove any obsolete API provenance when replacing a source with a manual snapshot.
+
+A skipped API source leaves its manual snapshot unchanged. A failed authorized request retains the manual values and original `asOf` date, keeps `lastSuccess` null, and marks the source `stale`; its owner-provided provenance remains visible. A successful, identity-validated API response replaces all metric fields, records `lastSuccess`, marks the source `current`, and removes `manualSnapshot`. Only then may the site describe those values as automatically retrieved. Do not combine a manual h-index with unrelated or unverified citation/publication counts.
 
 ## Weekly refresh
 
@@ -62,7 +68,7 @@ Official references: [Researcher API licensing and limits](https://developer.cla
 
 Run `npm run metrics:update` to request a refresh. Secrets must be provided through environment variables or GitHub Secrets; never prefix them with `VITE_`, put them in JSON, or commit them. Logs and saved data contain no credential values. Redirects are rejected, requests have a 20-second timeout, and there are no automatic retries: at most four HTTP requests occur per run when all sources are enabled. Rate-limit failures wait until a later scheduled or manual run instead of repeatedly spending quota.
 
-Run `node --test tests/metrics.test.mjs` to verify numeric validation, mismatched identities, DOI overlap, source separation, no-entitlement behavior, network errors, HTTP errors, malformed JSON, partial failures, and credential isolation. Test figures are synthetic and never copied into the production data.
+Run `node --test tests/metrics.test.mjs` to verify numeric validation, mismatched identities, DOI overlap, source separation, no-entitlement behavior, network errors, HTTP errors, malformed JSON, partial failures, credential isolation, manual snapshot retention, and replacement by a successful authorized API result. Test figures are synthetic and never copied into the production data.
 
 If an author identifier changes legitimately, verify the replacement against the official source and supplied records before editing both the profile and metrics identity. If OpenAlex eventually contains more than 100 works and its first page no longer includes two known DOIs, the conservative overlap check will stop updates; review the adapter rather than weakening identity checks silently. Stop flags affect future requests; removing an existing public snapshot requires removing its values and redeploying.
 
