@@ -1,0 +1,12 @@
+node_modules/
+dist/
+index.html
+public/publications.bib
+public/publications.json
+public/sitemap.xml
+playwright-report/
+test-results/
+.env
+.env.*
+*.log
+.DS_Store

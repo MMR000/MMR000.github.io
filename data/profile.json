@@ -1,0 +1,43 @@
+{
+  "name": "Mamyr Altaibek",
+  "professional_title": "PhD Researcher in Information Technology",
+  "institution": "L.N. Gumilyov Eurasian National University (ENU)",
+  "role": "Head of ENU Luban Workshop Laboratory",
+  "city": "Astana",
+  "country": "Kazakhstan",
+  "research_interests": [
+    "Embodied AI",
+    "Autonomous robot skill learning",
+    "Multimodal learning",
+    "Robot skill transfer and adaptation",
+    "Speech emotion recognition",
+    "Low-resource AI"
+  ],
+  "orcid": "0009-0002-8219-0751",
+  "scopus_author_id": "59535935600",
+  "web_of_science_researcher_id": "NAX-9175-2025",
+  "google_scholar_id": "NBU7ZlEAAAAJ",
+  "github_username": "MMR000",
+  "github_repo": "MMR000/mamyraltaibek.github.io",
+  "current_url_if_published": "https://mmr000.github.io/mamyraltaibek.github.io/",
+  "email": "mameralt@outlook.com",
+  "portrait_file": "images/mamyr-altaibek.jpg",
+  "cv_file": null,
+  "metrics": {
+    "scopus": {
+      "h_index": null,
+      "citations": null,
+      "documents": null
+    },
+    "web_of_science": {
+      "h_index": null,
+      "times_cited": null,
+      "publications": null
+    },
+    "openalex": {
+      "h_index": null,
+      "citations": null,
+      "works": null
+    }
+  }
+}

@@ -1,0 +1,1154 @@
+{
+  "as_of": "2026-10-19",
+  "notes": "20 unique works reconciled against the public ORCID API on 2026-10-19 (UTC); 16 match author ID 59535935600 in the user-supplied Scopus CSV. The CSV export date is not recorded, and its 16 records are not a live official Scopus metric. Four additional works are ORCID-listed without verified Scopus indexing. Web of Science indexing is not independently verified. Publisher evidence resolves the Distributed Multimodal Video Generation chapter to 2025 while retaining the Scopus 2026 value in source_years.",
+  "publications": [
+    {
+      "title": "Directional Asymmetry of Domain-Adversarial Adaptation in Cross-Corpus Speech Emotion Recognition",
+      "year": 2026,
+      "venue": "IEEE Access",
+      "type": "Article",
+      "authors": "Altaibek M.; Yergesh B.; Zulkhazhav A.; Yelibayeva G.; Zhetkenbay L.",
+      "doi": "10.1109/ACCESS.2026.3713531",
+      "url": "https://doi.org/10.1109/ACCESS.2026.3713531",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105045227437",
+      "source_years": {
+        "orcid": 2026,
+        "scopus": 2026
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 220817968,
+              "source": "Crossref",
+              "publication_date": "2026",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/220817968"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105045227437",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "14",
+      "issue": null,
+      "pages": "111859–111878",
+      "article_number": null
+    },
+    {
+      "title": "Monitoring and comparative analysis of containerized environments",
+      "year": 2026,
+      "venue": "Frontiers in Computer Science",
+      "type": "Article",
+      "authors": "Omarbekova A.; Kussepova L.; Zulkhazhav A.; Altaibek M.; Bekmanova G.; Nazyrova A.; Lamasheva Z.",
+      "doi": "10.3389/fcomp.2026.1886850",
+      "url": "https://doi.org/10.3389/fcomp.2026.1886850",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105050313565",
+      "source_years": {
+        "orcid": 2026,
+        "scopus": 2026
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 226304796,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2026-08-31",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/226304796"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105050313565",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "8",
+      "issue": null,
+      "pages": "1–22",
+      "article_number": "1886850"
+    },
+    {
+      "title": "Multimodal AI in education: an avatar-based intelligent learning system for the Kazakh language",
+      "year": 2026,
+      "venue": "Frontiers in Computer Science",
+      "type": "Article",
+      "authors": "Ukenova A.; Bekmanova G.; Yergesh B.; Ben Yahia S.; Altaibek M.; Nazyrova A.; Lamasheva Z.",
+      "doi": "10.3389/fcomp.2026.1780150",
+      "url": "https://doi.org/10.3389/fcomp.2026.1780150",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105045660318",
+      "source_years": {
+        "orcid": 2026,
+        "scopus": 2026
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 217248469,
+              "source": "Web of Science",
+              "publication_date": "2026",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/217248469"
+            },
+            {
+              "put_code": 211043731,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2026-04-08",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/211043731"
+            }
+          ],
+          "imported_web_of_science_identifiers": [
+            {
+              "id": "WOS:001745862100001",
+              "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:001745862100001",
+              "orcid_put_code": 217248469
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105045660318",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "8",
+      "issue": null,
+      "pages": null,
+      "article_number": "1780150"
+    },
+    {
+      "title": "A Framework-Driven Evaluation and Survey of MCU Fault Injection Resilience for IoT",
+      "year": 2025,
+      "venue": "Applied Sciences (Switzerland)",
+      "type": "Review",
+      "authors": "Seniushin I.; Glazyrina N.; Atanbayev Y.; Bairamov K.; Satiyeva Y.; Nurman O.; Altaibek M.",
+      "doi": "10.3390/app152211991",
+      "url": "https://doi.org/10.3390/app152211991",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105023123890",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Review"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 197110021,
+              "source": "Multidisciplinary Digital Publishing Institute",
+              "publication_date": "2025-11",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/197110021"
+            },
+            {
+              "put_code": 196677486,
+              "source": "Crossref",
+              "publication_date": "2025-11-12",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/196677486"
+            },
+            {
+              "put_code": 217248470,
+              "source": "Web of Science",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/217248470"
+            }
+          ],
+          "imported_web_of_science_identifiers": [
+            {
+              "id": "WOS:001623513900001",
+              "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:001623513900001",
+              "orcid_put_code": 217248470
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105023123890",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "15",
+      "issue": "22",
+      "pages": null,
+      "article_number": "11991"
+    },
+    {
+      "title": "A Multimodal Framework for Speech Emotion Recognition in Low-Resource Languages",
+      "year": 2025,
+      "venue": "Journal of Artificial Intelligence and Technology",
+      "type": "Article",
+      "authors": "Altaibek M.; Zulkazhav A.; Yergesh B.; Bekmanova G.; Aibol T.",
+      "doi": "10.37965/jait.2025.0781",
+      "url": "https://doi.org/10.37965/jait.2025.0781",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105018196225",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 194861618,
+              "source": "Scopus - Elsevier",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/194861618"
+            },
+            {
+              "put_code": 191167278,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-09-03",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/191167278"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105018196225",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "5",
+      "issue": null,
+      "pages": "354–364",
+      "article_number": null
+    },
+    {
+      "title": "A Personalized Learning Feedback System Driven by a Lexical Semantic Network",
+      "year": 2025,
+      "venue": "News of the National Academy of Sciences of the Republic of Kazakhstan",
+      "type": "Journal article",
+      "authors": "A. Zulhazhav; G. T. Bekmanova; M. Altaibek; A. S. Omarbekova; A. A. Sharipbay",
+      "doi": "10.32014/2025.2518-1726.369",
+      "url": "https://doi.org/10.32014/2025.2518-1726.369",
+      "indexing": {
+        "scopus": "not_verified",
+        "web_of_science": "not_checked"
+      },
+      "source": "public_orcid_profile",
+      "scopus_eid": null,
+      "source_years": {
+        "orcid": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 194649194,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-09-27",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/194649194"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "A Survey of Cross-Layer Security for Resource-Constrained IoT Devices",
+      "year": 2025,
+      "venue": "Applied Sciences (Switzerland)",
+      "type": "Review",
+      "authors": "Altaibek M.; Issainova A.; Aidynov T.; Kuttymbek D.; Abisheva G.; Nurusheva A.",
+      "doi": "10.3390/app15179691",
+      "url": "https://doi.org/10.3390/app15179691",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105015472032",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Review"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 191138969,
+              "source": "Multidisciplinary Digital Publishing Institute",
+              "publication_date": "2025-09",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/191138969"
+            },
+            {
+              "put_code": 191165508,
+              "source": "Crossref",
+              "publication_date": "2025-09-03",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/191165508"
+            },
+            {
+              "put_code": 194861619,
+              "source": "Scopus - Elsevier",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/194861619"
+            },
+            {
+              "put_code": 217248471,
+              "source": "Web of Science",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/217248471"
+            }
+          ],
+          "imported_web_of_science_identifiers": [
+            {
+              "id": "WOS:001569539500001",
+              "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:001569539500001",
+              "orcid_put_code": 217248471
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105015472032",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "15",
+      "issue": "17",
+      "pages": null,
+      "article_number": "9691"
+    },
+    {
+      "title": "Application of Deep Learning Techniques for Automatic Detection of Network Security Threats in Internet of Things Environments",
+      "year": 2025,
+      "venue": "IEEE European Technology and Engineering Management Summit, E-TEMS",
+      "type": "Conference paper",
+      "authors": "Aidynov T.; Altaibek M.; Tleuberdin S.; Nurusheva A.; Satybaldina D.; Abisheva G.",
+      "doi": "10.1109/E-TEMS64751.2025.11239312",
+      "url": "https://doi.org/10.1109/E-TEMS64751.2025.11239312",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105030536706",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "conference-paper",
+        "scopus": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 197337891,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-05-26",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/197337891"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105030536706",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": null,
+      "issue": "2025",
+      "pages": "237–245",
+      "article_number": null
+    },
+    {
+      "title": "Assessment and Improvement of Avatar-Based Learning System: From Linguistic Structure Alignment to Sentiment-Driven Expressions",
+      "year": 2025,
+      "venue": "Sensors",
+      "type": "Article",
+      "authors": "Ukenova A.; Bekmanova G.; Zaki N.; Kikimbayev M.; Altaibek M.",
+      "doi": "10.3390/s25061921",
+      "url": "https://doi.org/10.3390/s25061921",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105000912894",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 180701833,
+              "source": "Multidisciplinary Digital Publishing Institute",
+              "publication_date": "2025-03",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/180701833"
+            },
+            {
+              "put_code": 180498946,
+              "source": "Crossref",
+              "publication_date": "2025-03-19",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/180498946"
+            },
+            {
+              "put_code": 194861617,
+              "source": "Scopus - Elsevier",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/194861617"
+            },
+            {
+              "put_code": 217248472,
+              "source": "Web of Science",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/217248472"
+            }
+          ],
+          "imported_web_of_science_identifiers": [
+            {
+              "id": "WOS:001453815500001",
+              "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:001453815500001",
+              "orcid_put_code": 217248472
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105000912894",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "25",
+      "issue": "6",
+      "pages": null,
+      "article_number": "1921"
+    },
+    {
+      "title": "Cross-Layer Security Assessment in IoT Ecosystems: Analyzing Vulnerabilities in the Zigbee Protocol",
+      "year": 2025,
+      "venue": "IEEE European Technology and Engineering Management Summit, E-TEMS",
+      "type": "Conference paper",
+      "authors": "Aidynov T.; Tleuberdin S.; Nurusheva A.; Satybaldina D.; Altaibek M.; Boranbay Z.",
+      "doi": "10.1109/E-TEMS64751.2025.11239104",
+      "url": "https://doi.org/10.1109/E-TEMS64751.2025.11239104",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105030542415",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "conference-paper",
+        "scopus": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 197337882,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-05-26",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/197337882"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105030542415",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": null,
+      "issue": "2025",
+      "pages": "231–236",
+      "article_number": null
+    },
+    {
+      "title": "Distributed Multimodal Video Generation and Interaction Framework Based on Message-Driven Middleware",
+      "year": 2025,
+      "venue": "Lecture Notes in Networks and Systems",
+      "type": "Conference paper",
+      "authors": "Altaibek M.; Zulkhazhav A.; Bekmanova G.; Omarbekova A.; Yergesh B.; Kabdylova D.; Sultan B.; Andakov D.",
+      "doi": "10.1007/978-3-032-11512-6_14",
+      "url": "https://doi.org/10.1007/978-3-032-11512-6_14",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105027937927",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2026,
+        "publisher": 2025
+      },
+      "source_types": {
+        "orcid": "book-chapter",
+        "scopus": "Conference paper",
+        "publisher": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 198117278,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025",
+              "type": "book-chapter",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/198117278"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105027937927",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        },
+        "publisher": {
+          "url": "https://link.springer.com/chapter/10.1007/978-3-032-11512-6_14",
+          "checked_at": "2026-10-19",
+          "publication_date": "2025-11-25",
+          "citation_year": 2025
+        }
+      },
+      "volume": "1730 LNNS",
+      "issue": null,
+      "pages": "160–169",
+      "article_number": null,
+      "publication_date": "2025-11-25",
+      "review_notes": [
+        "Displayed year follows Springer’s publication date and recommended citation (2025). The supplied Scopus export records 2026; the source-specific value is retained for review.",
+        "Springer and the Scopus export classify this item as a conference paper; ORCID classifies it as a book chapter."
+      ]
+    },
+    {
+      "title": "Ethical Research on Fairness and Privacy in Kazakh Toxicity Detection",
+      "year": 2025,
+      "venue": "Proceedings - 13th International Conference on Information Management and Engineering, ICIME 2025",
+      "type": "Conference paper",
+      "authors": "Zulkhazhav A.; Altaibek M.; Omarbekova A.; Sultan B.; Begenov O.",
+      "doi": "10.1109/ICIME66598.2025.00010",
+      "url": "https://doi.org/10.1109/ICIME66598.2025.00010",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105033993972",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "conference-paper",
+        "scopus": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 205061711,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-09-24",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/205061711"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105033993972",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": null,
+      "issue": null,
+      "pages": "1–4",
+      "article_number": null
+    },
+    {
+      "title": "Improving the efficiency of attack detection in cellular networks through the combination of statistical feature selection methods and machine learning algorithms",
+      "year": 2025,
+      "venue": "Proceedings - 29th IEEE/ACIS International Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing, SNPD 2025-Summer",
+      "type": "Conference paper",
+      "authors": "Satybaldin D.; Bisenbaeva N.; Issainova A.; Seitkulov Y.; Aidynov T.; Altaibek M.",
+      "doi": "10.1109/SNPD65828.2025.11253024",
+      "url": "https://doi.org/10.1109/SNPD65828.2025.11253024",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105031121689",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "conference-paper",
+        "scopus": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 198380398,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-06-25",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/198380398"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105031121689",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": null,
+      "issue": null,
+      "pages": "111–116",
+      "article_number": null
+    },
+    {
+      "title": "INTERFACE DESIGN OF AN INTELLIGENT INTERACTIVE LEARNING SYSTEM",
+      "year": 2025,
+      "venue": "Scientific Journal of Astana IT University",
+      "type": "Journal article",
+      "authors": "Aru Ukenova; Gulmira Bekmanova; Banu Yergesh; Mamyr Altaibek",
+      "doi": "10.37943/24VEWA2615",
+      "url": "https://doi.org/10.37943/24VEWA2615",
+      "indexing": {
+        "scopus": "not_verified",
+        "web_of_science": "not_checked"
+      },
+      "source": "public_orcid_profile",
+      "scopus_eid": null,
+      "source_years": {
+        "orcid": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 195707389,
+              "source": "Crossref",
+              "publication_date": "2025-10-30",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/195707389"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Kazakh Abstractive Summarization: Dataset, Model Evaluation, and Applications in Automated SEO Metadata Generation",
+      "year": 2025,
+      "venue": "Recent Challenges in Intelligent Information and Database Systems (ACIIDS 2025), Communications in Computer and Information Science",
+      "type": "Book chapter",
+      "authors": "Mamyr Altaibek; Altanbek Zulhazhav; Gulmira Bekmanova; Banu Yergesh; Assel Omarbekova; Sharipbay Altynbek",
+      "doi": "10.1007/978-981-96-5881-7_18",
+      "url": "https://doi.org/10.1007/978-981-96-5881-7_18",
+      "indexing": {
+        "scopus": "not_verified",
+        "web_of_science": "not_checked"
+      },
+      "source": "public_orcid_profile",
+      "scopus_eid": null,
+      "source_years": {
+        "orcid": 2025,
+        "publisher": 2025
+      },
+      "source_types": {
+        "orcid": "book-chapter",
+        "publisher": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 182921928,
+              "source": "Crossref",
+              "publication_date": "2025",
+              "type": "book-chapter",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/182921928"
+            }
+          ]
+        },
+        "publisher": {
+          "url": "https://link.springer.com/chapter/10.1007/978-981-96-5881-7_18",
+          "checked_at": "2026-10-19",
+          "publication_date": "2025-04-17",
+          "citation_year": 2025
+        }
+      },
+      "volume": "2493",
+      "pages": "235–246",
+      "publication_date": "2025-04-17",
+      "review_notes": [
+        "ORCID describes this as a book chapter; the Springer publisher page describes it as a conference paper. This does not establish Scopus or Web of Science indexing."
+      ]
+    },
+    {
+      "title": "Privacy-Preserving Speaker Verification in End-to-End Encrypted Chats: A Feasibility Study",
+      "year": 2025,
+      "venue": "IEEE Access",
+      "type": "Article",
+      "authors": "Altaibek M.; Zulkhazhav A.; Yergesh B.; Bekmanova G.; Omarbekova A.; Sharipbay A.",
+      "doi": "10.1109/ACCESS.2025.3648046",
+      "url": "https://doi.org/10.1109/ACCESS.2025.3648046",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105026101763",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "scopus": "Article"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 200689980,
+              "source": "Crossref",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/200689980"
+            },
+            {
+              "put_code": 217248473,
+              "source": "Web of Science",
+              "publication_date": "2025",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/217248473"
+            }
+          ],
+          "imported_web_of_science_identifiers": [
+            {
+              "id": "WOS:001652569800018",
+              "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:001652569800018",
+              "orcid_put_code": 217248473
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105026101763",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": "13",
+      "issue": null,
+      "pages": "217556–217572",
+      "article_number": null
+    },
+    {
+      "title": "Research on Automatic Detection of Network Security Threats Using Deep Learning Technology",
+      "year": 2025,
+      "venue": "International Journal of Advance Computational Engineering and Networking (IJACEN)",
+      "type": "Journal article",
+      "authors": "Tolegen Aidynov; Mamyr Altaibek; Dina Satybaldina; Gulsipat Abisheva; Aliya Issainova; Axaule Juasbayeva",
+      "doi": null,
+      "url": "https://ijacen.iraj.in/paperdetails/21597",
+      "indexing": {
+        "scopus": "not_verified",
+        "web_of_science": "not_checked"
+      },
+      "source": "public_orcid_profile",
+      "scopus_eid": null,
+      "source_years": {
+        "orcid": 2025,
+        "publisher": 2025
+      },
+      "source_types": {
+        "orcid": "journal-article",
+        "publisher": "Research paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 184677643,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-05-22",
+              "type": "journal-article",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/184677643"
+            }
+          ],
+          "authors": "Mamyr Altaibek; Tolegen Aidynov; Dina Satybaldina; Gulsipat Abisheva; Aliya issainova; Axaule Juasbayeva"
+        },
+        "publisher": {
+          "url": "https://ijacen.iraj.in/paperdetails/21597",
+          "checked_at": "2026-10-19",
+          "publication_date": "2025-05-22",
+          "authors": "Tolegen Aidynov; Mamyr Altaibek; Dina Satybaldina; Gulsipat Abisheva; Aliyaissainova; Axaule Juasbayeva",
+          "doi_status": "not_listed"
+        }
+      },
+      "volume": "13",
+      "issue": "1",
+      "publication_date": "2025-05-22",
+      "review_notes": [
+        "Author order follows the publisher, whose list starts Tolegen Aidynov, then Mamyr Altaibek. The supplied ORCID record places Mamyr Altaibek first; both source forms are retained for review.",
+        "The publisher spells Aliya Issainova without a space. Display spacing follows the supplied bibliography; the publisher’s literal form is retained in provenance.",
+        "No DOI is listed on the publisher page or public ORCID record. A verified publisher link is provided instead."
+      ]
+    },
+    {
+      "title": "Unified Emotion-Dialect Speech Platform for Turkic Languages via Multi-Task High-Dimensional Modeling",
+      "year": 2025,
+      "venue": "International Conference on Computer Science and Engineering, UBMK",
+      "type": "Conference paper",
+      "authors": "Zulkhazhav A.; Altaibek M.; Bekmanova G.; Omarbekova A.; Yergesh B.; Kabdylova D.",
+      "doi": "10.1109/UBMK67458.2025.11206757",
+      "url": "https://doi.org/10.1109/UBMK67458.2025.11206757",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105030864731",
+      "source_years": {
+        "orcid": 2025,
+        "scopus": 2025
+      },
+      "source_types": {
+        "orcid": "conference-paper",
+        "scopus": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 195350508,
+              "source": "Mamyr Altaibek",
+              "publication_date": "2025-09-17",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/195350508"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105030864731",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": null,
+      "issue": "2025",
+      "pages": "1738–1743",
+      "article_number": null
+    },
+    {
+      "title": "Calculating the Weight of an Accusation in Political Discourse Using Fuzzy Logic",
+      "year": 2024,
+      "venue": "Proceedings of the IEEE 3rd International Conference on Problems of Informatics, Electronics and Radio Engineering, PIERE 2024",
+      "type": "Conference paper",
+      "authors": "Sairanbekova A.; Altaibek M.; Sharipbay A.; Bekmanova G.; Orynbay L.",
+      "doi": "10.1109/PIERE62470.2024.10804995",
+      "url": "https://doi.org/10.1109/PIERE62470.2024.10804995",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-85216542253",
+      "source_years": {
+        "orcid": 2024,
+        "scopus": 2024
+      },
+      "source_types": {
+        "orcid": "conference-paper",
+        "scopus": "Conference paper"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 180314035,
+              "source": "Scopus - Elsevier",
+              "publication_date": "2024",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/180314035"
+            },
+            {
+              "put_code": 174483087,
+              "source": "Crossref",
+              "publication_date": "2024-11-15",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/174483087"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-85216542253",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": null,
+      "issue": null,
+      "pages": "1910–1915",
+      "article_number": null
+    },
+    {
+      "title": "Effective Search Engine Optimization in CMS Using Morphological Analysis",
+      "year": 2024,
+      "venue": "Proceedings - 2024 7th Asia Conference on Cognitive Engineering and Intelligent lnteraction, CEII 2024",
+      "type": "Editorial",
+      "authors": "Bekmanova G.; Yergesh B.; Omarbekova A.; Abisheva G.; Aidynov T.; Orynbay L.; Altaibek M.; Sultan B.; Zakirova A.",
+      "doi": "10.1109/CEII65291.2024.00042",
+      "url": "https://doi.org/10.1109/CEII65291.2024.00042",
+      "indexing": {
+        "scopus": "export_confirmed",
+        "web_of_science": "not_checked"
+      },
+      "source": "user_supplied_scopus_csv",
+      "scopus_eid": "2-s2.0-105010579782",
+      "source_years": {
+        "orcid": 2024,
+        "scopus": 2024
+      },
+      "source_types": {
+        "orcid": "conference-paper",
+        "scopus": "Editorial"
+      },
+      "provenance": {
+        "orcid": {
+          "status": "public_api_confirmed",
+          "checked_at": "2026-10-19",
+          "profile_url": "https://orcid.org/0009-0002-8219-0751",
+          "records": [
+            {
+              "put_code": 186525517,
+              "source": "Crossref",
+              "publication_date": "2024-12-14",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/186525517"
+            },
+            {
+              "put_code": 194861620,
+              "source": "Scopus - Elsevier",
+              "publication_date": "2024",
+              "type": "conference-paper",
+              "api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/work/194861620"
+            }
+          ]
+        },
+        "scopus": {
+          "status": "user_export_confirmed",
+          "source_file": "mamyr altaibek.csv",
+          "matched_author_id": "59535935600",
+          "eid": "2-s2.0-105010579782",
+          "export_date": null,
+          "checked_at": "2026-10-19"
+        }
+      },
+      "volume": null,
+      "issue": null,
+      "pages": "172–178",
+      "article_number": null,
+      "review_notes": [
+        "The supplied Scopus export classifies this work as Editorial; ORCID classifies it as conference-paper. The Scopus classification is preserved; no single source-neutral type should be inferred."
+      ]
+    }
+  ],
+  "verification": {
+    "checked_at": "2026-10-19",
+    "timezone": "UTC",
+    "orcid_api_url": "https://pub.orcid.org/v3.0/0009-0002-8219-0751/works",
+    "orcid_grouped_works": 20,
+    "orcid_source_records": 33,
+    "scopus_matched_records": 16,
+    "scopus_export_date": null,
+    "deduplication": "Case-insensitive normalized DOI; normalized title for the one work without a DOI. ORCID source records within one group are merged, not counted as separate works."
+  }
+}
