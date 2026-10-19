@@ -54,9 +54,15 @@ test("search, year filters, empty state and reset work together", async ({
   await page.getByLabel("Publication year").selectOption("2024");
   await expect(page.locator(".publication:visible")).toHaveCount(2);
 });
-test("theme persists and keyboard skip link works", async ({ page }) => {
-  await page.emulateMedia({ colorScheme: "light" });
+test("light is the default regardless of system theme, manual choice persists and skip link works", async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("./");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.emulateMedia({ colorScheme: "dark" });
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.keyboard.press("Tab");
   await expect(
     page.getByRole("link", { name: "Skip to content" }),
@@ -66,6 +72,8 @@ test("theme persists and keyboard skip link works", async ({ page }) => {
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await page.getByRole("button", { name: "Switch to light mode" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
 });
 test("source separation and citation download", async ({ page, request }) => {
@@ -93,6 +101,10 @@ for (const mode of ["light", "dark"] as const) {
       await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
       await page.emulateMedia({ colorScheme: mode, reducedMotion: "reduce" });
       await page.goto("./");
+      if (mode === "dark") {
+        await page.getByRole("button", { name: "Switch to dark mode" }).click();
+      }
+      await expect(page.locator("html")).toHaveAttribute("data-theme", mode);
       await page.evaluate(() => document.fonts.ready);
       const result = await new AxeBuilder({ page })
         .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -111,9 +123,13 @@ for (const mode of ["light", "dark"] as const) {
 test("all content and links remain available without JavaScript", async ({
   browser,
 }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    colorScheme: "dark",
+  });
   const page = await context.newPage();
   await page.goto("http://127.0.0.1:4173/mamyraltaibek.github.io/");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await expect(page.locator(".publication:visible")).toHaveCount(20);
   await expect(
     page.getByRole("link", { name: "mameralt@outlook.com" }),

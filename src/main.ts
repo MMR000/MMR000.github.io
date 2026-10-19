@@ -2,14 +2,7 @@ import "./styles.css";
 
 const root = document.documentElement;
 const themeButton = document.querySelector<HTMLButtonElement>(".theme-toggle")!;
-const themeMedia = window.matchMedia("(prefers-color-scheme: dark)");
-let explicitTheme: string | null = null;
-try {
-  explicitTheme = localStorage.getItem("theme");
-} catch {
-  /* Storage may be unavailable. */
-}
-function setTheme(theme: string) {
+function setTheme(theme: "light" | "dark") {
   root.dataset.theme = theme;
   themeButton.setAttribute(
     "aria-label",
@@ -19,19 +12,16 @@ function setTheme(theme: string) {
     .querySelector('meta[name="theme-color"]')
     ?.setAttribute("content", theme === "dark" ? "#191e1e" : "#f8f7f3");
 }
-setTheme(root.dataset.theme || (themeMedia.matches ? "dark" : "light"));
+setTheme(root.dataset.theme === "dark" ? "dark" : "light");
 themeButton.hidden = false;
 themeButton.addEventListener("click", () => {
-  explicitTheme = root.dataset.theme === "dark" ? "light" : "dark";
-  setTheme(explicitTheme);
+  const theme = root.dataset.theme === "dark" ? "light" : "dark";
+  setTheme(theme);
   try {
-    localStorage.setItem("theme", explicitTheme);
+    localStorage.setItem("theme", theme);
   } catch {
     /* Session-only preference. */
   }
-});
-themeMedia.addEventListener("change", (event) => {
-  if (!explicitTheme) setTheme(event.matches ? "dark" : "light");
 });
 
 const search = document.querySelector<HTMLInputElement>("#publication-search")!;
