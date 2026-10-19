@@ -128,7 +128,7 @@ test("all content and links remain available without JavaScript", async ({
     colorScheme: "dark",
   });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4173/mamyraltaibek.github.io/");
+  await page.goto("http://127.0.0.1:4173/");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await expect(page.locator(".publication:visible")).toHaveCount(20);
   await expect(

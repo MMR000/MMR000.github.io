@@ -6,7 +6,7 @@ export default defineConfig({
   workers: 2,
   reporter: "list",
   use: {
-    baseURL: "http://127.0.0.1:4173/mamyraltaibek.github.io/",
+    baseURL: "http://127.0.0.1:4173/",
     browserName: "chromium",
     launchOptions: process.env.CHROME_PATH
       ? { executablePath: process.env.CHROME_PATH }
@@ -14,7 +14,7 @@ export default defineConfig({
   },
   webServer: {
     command: "npm run preview -- --port 4173",
-    url: "http://127.0.0.1:4173/mamyraltaibek.github.io/",
+    url: "http://127.0.0.1:4173/",
     reuseExistingServer: true,
   },
 });

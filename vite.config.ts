@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/mamyraltaibek.github.io/",
+  base: "/",
   build: { target: "es2022" },
 });

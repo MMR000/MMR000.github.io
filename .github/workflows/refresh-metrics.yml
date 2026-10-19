@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   refresh:
-    if: github.repository == 'MMR000/mamyraltaibek.github.io' && github.ref == 'refs/heads/main'
+    if: github.repository == 'MMR000/MMR000.github.io' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

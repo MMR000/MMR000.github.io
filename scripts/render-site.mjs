@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir, access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-export const BASE = "/mamyraltaibek.github.io/";
+export const BASE = "/";
 export const SITE = `https://mmr000.github.io${BASE}`;
 export const escapeHtml = (value) =>
   String(value ?? "").replace(
@@ -147,7 +147,7 @@ export function renderMetrics(data, asOf) {
           .join("")}</aside>`
       : ""
   }
-  <details class="source-notes"><summary>About the records and metrics <span aria-hidden="true">+</span></summary><div class="source-notes-body"><p>The bibliography combines ORCID records with a supplied Scopus export; records were reconciled on ${dateLabel(asOf)}. “Scopus export” identifies a record in that supplied file; it is not a live indexed-publication count. ORCID alone does not establish indexing in Scopus or Web of Science.</p><div class="source-columns">${sources.map((source) => `<div><h4>${e(source.label)}</h4><p>${sourceDescription(source)}</p></div>`).join("")}</div><p>Counts from different databases have different coverage and are never combined. Publication metadata and source-specific date differences are documented in the ${external("https://github.com/MMR000/mamyraltaibek.github.io/blob/main/docs/DATA_PROVENANCE.md", "data notes")}.</p></div></details>`;
+  <details class="source-notes"><summary>About the records and metrics <span aria-hidden="true">+</span></summary><div class="source-notes-body"><p>The bibliography combines ORCID records with a supplied Scopus export; records were reconciled on ${dateLabel(asOf)}. “Scopus export” identifies a record in that supplied file; it is not a live indexed-publication count. ORCID alone does not establish indexing in Scopus or Web of Science.</p><div class="source-columns">${sources.map((source) => `<div><h4>${e(source.label)}</h4><p>${sourceDescription(source)}</p></div>`).join("")}</div><p>Counts from different databases have different coverage and are never combined. Publication metadata and source-specific date differences are documented in the ${external("https://github.com/MMR000/MMR000.github.io/blob/main/docs/DATA_PROVENANCE.md", "data notes")}.</p></div></details>`;
 }
 export async function renderSite() {
   const readJson = async (path) =>
