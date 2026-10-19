@@ -53,11 +53,6 @@ const dateLabel = (date) =>
     year: "numeric",
     timeZone: "UTC",
   });
-const featuredDois = [
-  "10.1109/access.2026.3713531",
-  "10.37965/jait.2025.0781",
-  "10.1109/access.2025.3648046",
-];
 export function toBibtex(p, index) {
   const clean = (v) => String(v).replace(/[{}\\]/g, "");
   const type =
@@ -94,7 +89,6 @@ export function toBibtex(p, index) {
     .join(",\n")}\n}`;
 }
 function publication(p, index) {
-  const featured = featuredDois.includes(normalizeDoi(p.doi));
   const authors = p.authors
     .split(";")
     .map((a) =>
@@ -107,7 +101,7 @@ function publication(p, index) {
     sourceLabel === "Scopus export" && p.scopus_eid
       ? `https://www.scopus.com/record/display.uri?eid=${encodeURIComponent(p.scopus_eid)}&origin=resultslist`
       : "https://orcid.org/0009-0002-8219-0751";
-  return `<li class="publication" data-year="${p.year}" data-featured="${featured}" data-search="${e(`${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase())}">
+  return `<li class="publication" data-year="${p.year}" data-search="${e(`${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase())}">
     <div class="pub-year">${p.year}<span class="pub-number">${String(index + 1).padStart(2, "0")}</span></div>
     <article><h3>${p.url ? external(p.url, e(p.title), "pub-title") : e(p.title)}</h3><p class="authors">${authors}</p><p class="venue">${e(p.venue)}</p>
     <div class="pub-meta">${external(sourceUrl, sourceLabel, "source-badge")}${p.doi ? `<span class="doi">DOI: ${e(p.doi)}</span>` : '<span class="doi">Publisher record</span>'}</div>
@@ -126,20 +120,20 @@ export function renderMetrics(data, asOf) {
   );
   const sourceDescription = (source) => {
     if (source.manualSnapshot)
-      return `The h-index was provided by the site owner on ${dateLabel(source.manualSnapshot.asOf)}. It is a manual snapshot, not an API-verified value. Citation and publication totals are not published. Authorized API access is required for automatic updates.`;
+      return `The h-index was confirmed by Mamyr Altaibek on ${dateLabel(source.manualSnapshot.asOf)}. Citation and publication totals are not shown.`;
     if (source.lastSuccess)
-      return `These figures are from ${e(source.label)} only. ${source.status === "stale" ? "A refresh failed; the last successful snapshot is retained." : "Refreshed weekly through the official API."}`;
+      return `These figures are from ${e(source.label)} only. ${source.status === "stale" ? "These are the most recently available figures." : "Updated weekly from this source."}`;
     return source.label === "OpenAlex"
       ? "No verified metrics are currently published."
-      : "Citation counts and h-index are not published until a dated snapshot or authorized API access is available.";
+      : "Figures are shown only when a dated, confirmed value is available.";
   };
   return `${
     available.length
       ? `<aside class="metrics" aria-label="Source-specific research metrics">${available
           .map((source) => {
             const timestamp = source.manualSnapshot
-              ? `Manual snapshot · ${dateLabel(source.manualSnapshot.asOf)}`
-              : `${source.status === "stale" ? "Last API update" : "API updated"} ${dateLabel(source.lastSuccess)}`;
+              ? `As of ${dateLabel(source.manualSnapshot.asOf)}`
+              : `${source.status === "stale" ? "As of" : "Updated"} ${dateLabel(source.lastSuccess)}`;
             return `<div class="metric-source"><div class="metric-title">${external(source.profileUrl, e(source.label))}<span>${timestamp}</span></div><dl>${Object.entries(
               source.metrics,
             )
@@ -222,7 +216,7 @@ export async function renderSite() {
 <main id="main"><section class="hero content-width" id="home" aria-labelledby="name"><div class="hero-intro"><p class="eyebrow">Researcher in artificial intelligence</p><h1 id="name">Mamyr Altaibek<span class="name-period">.</span></h1><p class="hero-position">${e(profile.professional_title)}</p><p class="hero-affiliation">L.N. Gumilyov Eurasian National University<br>Astana, Kazakhstan</p><a class="text-link" href="#publications">Explore my publications <span aria-hidden="true">↓</span></a></div><figure class="portrait"><img src="${BASE}${e(profile.portrait_file)}" width="160" height="214" alt="Formal portrait of Mamyr Altaibek" fetchpriority="high"><figcaption>ENU · Kazakhstan</figcaption></figure><div class="profile-links" aria-label="Academic profiles">${links.map(([label, href]) => external(href, e(label))).join("")}</div></section>
 <section class="section content-width about-section" id="about" aria-labelledby="about-heading"><div class="section-label"><span class="section-number">01 /</span><h2 id="about-heading">About</h2></div><div class="section-body"><p class="lead">I study how intelligent systems learn from multimodal information and adapt to new tasks.</p><div class="about-columns"><p>I am a PhD researcher in Information Technology at <strong>L.N. Gumilyov Eurasian National University (ENU)</strong> and Head of the <strong>ENU Luban Workshop Laboratory</strong>. My current research focuses on autonomous robot skill learning, multimodal demonstrations, and the adaptation of robotic skills across tasks and simulated environments.</p><p>My earlier work spans speech processing, multimodal AI, educational technologies, and information security. These interests inform my current doctoral research in embodied AI.</p></div></div></section>
 <section class="section content-width" id="research" aria-labelledby="research-heading"><div class="section-label"><span class="section-number">02 /</span><h2 id="research-heading">Research</h2></div><div class="section-body"><div class="section-intro"><p class="eyebrow">Current research directions</p><p class="section-description">Learning, transferring and adapting robotic skills.</p></div><div class="research-grid"><article><span class="research-index">I</span><h3>Embodied<br> intelligence</h3><p>Autonomous robot skill learning through interaction with tasks and simulated environments.</p></article><article><span class="research-index">II</span><h3>Multimodal<br> learning</h3><p>Learning from demonstrations that bring together complementary sources of information.</p></article><article><span class="research-index">III</span><h3>Skill transfer<br> &amp; adaptation</h3><p>Investigating how learned robotic skills can be reused and adapted across tasks.</p></article></div><p class="research-footnote">These are ongoing PhD research directions. Published work is listed below.</p></div></section>
-<section class="section content-width publications-section" id="publications" aria-labelledby="publications-heading"><div class="section-label"><span class="section-number">03 /</span><h2 id="publications-heading">Publications</h2><a class="download-link" href="${BASE}publications.bib" download>Download BibTeX <span aria-hidden="true">↓</span></a></div><div class="section-body"><div class="publications-intro"><div><p class="eyebrow" id="publication-view-label">Complete bibliography</p><p class="section-description">Speech, language and intelligent systems.</p></div><span class="record-count">${publications.length} works</span></div><p class="publication-note">Peer-reviewed articles, conference contributions and other listed works, ${Math.min(...years)}–${Math.max(...years)}. Records reconciled ${dateLabel(bibliography.as_of)}.</p><div class="publication-controls" hidden><label class="search-field"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.5"/></svg><span class="sr-only">Search publications</span><input type="search" id="publication-search" placeholder="Search title, author or topic…" autocomplete="off"></label><label class="year-field"><span class="sr-only">Publication year</span><select id="publication-year"><option value="all">All years</option>${years.map((y) => `<option value="${y}">${y}</option>`).join("")}</select></label></div><p id="results-status" class="results-status" role="status" aria-live="polite" hidden></p><ol class="publication-list" id="publication-list">${publications.map(publication).join("")}</ol><div class="empty-state" hidden><p>No publications match your search.</p><button type="button" class="text-link" id="clear-filters">Clear filters</button></div><button type="button" id="toggle-publications" class="all-publications" aria-expanded="false" aria-controls="publication-list" hidden>View all ${publications.length} publications <span aria-hidden="true">↓</span></button>${renderMetrics(metrics, bibliography.as_of)}</div></section>
+<section class="section content-width publications-section" id="publications" aria-labelledby="publications-heading"><div class="section-label"><span class="section-number">03 /</span><h2 id="publications-heading">Publications</h2><a class="download-link" href="${BASE}publications.bib" download>Download BibTeX <span aria-hidden="true">↓</span></a></div><div class="section-body"><div class="publications-intro"><div><p class="eyebrow" id="publication-view-label">Complete bibliography</p><p class="section-description">Speech, language and intelligent systems.</p></div><span class="record-count">${publications.length} works</span></div><p class="publication-note">Peer-reviewed articles, conference contributions and other listed works, ${Math.min(...years)}–${Math.max(...years)}. Records reconciled ${dateLabel(bibliography.as_of)}.</p><div class="publication-controls" hidden><label class="search-field"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.5"/></svg><span class="sr-only">Search publications</span><input type="search" id="publication-search" placeholder="Search title, author or topic…" autocomplete="off"></label><label class="year-field"><span class="sr-only">Publication year</span><select id="publication-year"><option value="all">All years</option>${years.map((y) => `<option value="${y}">${y}</option>`).join("")}</select></label></div><p id="results-status" class="results-status" role="status" aria-live="polite" hidden></p><ol class="publication-list" id="publication-list">${publications.map(publication).join("")}</ol><div class="empty-state" hidden><p>No publications match your search.</p><button type="button" class="text-link" id="clear-filters">Clear filters</button></div>${renderMetrics(metrics, bibliography.as_of)}</div></section>
 <section class="section content-width contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-label"><span class="section-number">04 /</span><h2 id="contact-heading">Contact</h2></div><div class="section-body"><p class="contact-heading">Academic correspondence.</p><a class="email-link" href="mailto:${e(profile.email)}">${e(profile.email)}${arrow}</a><div class="contact-details"><p>PhD Researcher in Information Technology<br>Head of ENU Luban Workshop Laboratory</p><p>L.N. Gumilyov Eurasian National University<br>Astana, Kazakhstan</p></div></div></section></main>
 <footer class="site-footer content-width"><p>© ${new Date().getUTCFullYear()} Mamyr Altaibek</p><span>Research · Publications · Contact</span><a href="#home">Back to top ↑</a></footer></body></html>`;
   const root = new URL("../", import.meta.url);

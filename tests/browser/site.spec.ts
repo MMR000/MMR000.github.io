@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-for (const width of [320, 390, 768, 1280, 1440]) {
+for (const width of [320, 390, 729, 768, 1280, 1440]) {
   test(`responsive layout at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     const failed: string[] = [];
@@ -27,10 +27,6 @@ for (const width of [320, 390, 768, 1280, 1440]) {
           (img: HTMLImageElement) => img.complete && img.naturalWidth > 0,
         ),
     ).toBeTruthy();
-    await expect(page.locator(".publication:visible")).toHaveCount(3);
-    await page
-      .getByRole("button", { name: "View all 20 publications" })
-      .click();
     await expect(page.locator(".publication:visible")).toHaveCount(20);
     expect(
       await page.evaluate(
@@ -53,7 +49,7 @@ test("search, year filters, empty state and reset work together", async ({
     page.getByText("No publications match your search."),
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear filters" }).click();
-  await expect(page.locator(".publication:visible")).toHaveCount(3);
+  await expect(page.locator(".publication:visible")).toHaveCount(20);
   await expect(page.getByRole("searchbox")).toBeFocused();
   await page.getByLabel("Publication year").selectOption("2024");
   await expect(page.locator(".publication:visible")).toHaveCount(2);
@@ -74,7 +70,6 @@ test("theme persists and keyboard skip link works", async ({ page }) => {
 });
 test("source separation and citation download", async ({ page, request }) => {
   await page.goto("./");
-  await page.getByRole("button", { name: "View all 20 publications" }).click();
   await expect(
     page.locator(".source-badge").filter({ hasText: "Scopus export" }),
   ).toHaveCount(16);
@@ -135,10 +130,40 @@ test("manual h-index snapshots stay separate from live OpenAlex metrics", async 
   await expect(sources).toHaveCount(3);
   await expect(sources.nth(0)).toContainText("Scopus");
   await expect(sources.nth(0).locator("dd")).toHaveText("4");
-  await expect(sources.nth(0)).toContainText("Manual snapshot");
+  await expect(sources.nth(0)).toContainText("As of 20 Oct 2026");
   await expect(sources.nth(1)).toContainText("Web of Science");
   await expect(sources.nth(1).locator("dd")).toHaveText("2");
   await expect(sources.nth(2)).toContainText("OpenAlex");
-  await expect(sources.nth(2)).toContainText("API updated");
+  await expect(sources.nth(2)).toContainText("Updated");
   await expect(sources.nth(2).locator("dd")).toHaveCount(3);
+  await page.locator(".source-notes summary").click();
+  await expect(page.locator("body")).not.toContainText(
+    /manual snapshot|\bAPI\b/i,
+  );
+});
+
+test("header text stays compact independently of portrait height at 729px", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 729, height: 900 });
+  await page.goto("./");
+  await page.evaluate(() => document.fonts.ready);
+  const gap = await page.evaluate(() => {
+    const name = document.querySelector("h1")!.getBoundingClientRect();
+    const position = document
+      .querySelector(".hero-position")!
+      .getBoundingClientRect();
+    const affiliation = document
+      .querySelector(".hero-affiliation")!
+      .getBoundingClientRect();
+    return {
+      nameToTitle: position.top - name.bottom,
+      titleToUniversity: affiliation.top - position.bottom,
+    };
+  });
+  expect(gap.nameToTitle).toBeLessThanOrEqual(12);
+  expect(gap.titleToUniversity).toBeLessThanOrEqual(12);
+  await expect(page.locator(".publication:visible")).toHaveCount(20);
+  await expect(page.locator("#toggle-publications")).toHaveCount(0);
+  await page.screenshot({ path: "../tablet-compact-viewport.png" });
 });

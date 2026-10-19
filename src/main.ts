@@ -36,16 +36,12 @@ themeMedia.addEventListener("change", (event) => {
 
 const search = document.querySelector<HTMLInputElement>("#publication-search")!;
 const year = document.querySelector<HTMLSelectElement>("#publication-year")!;
-const toggle = document.querySelector<HTMLButtonElement>(
-  "#toggle-publications",
-)!;
 const rows = [...document.querySelectorAll<HTMLElement>(".publication")];
 const status = document.querySelector<HTMLElement>("#results-status")!;
 const viewLabel = document.querySelector<HTMLElement>(
   "#publication-view-label",
 )!;
 const emptyState = document.querySelector<HTMLElement>(".empty-state")!;
-let expanded = false;
 function filterPublications(announce = true) {
   const terms = search.value
     .trim()
@@ -58,38 +54,20 @@ function filterPublications(announce = true) {
     const matches =
       (year.value === "all" || row.dataset.year === year.value) &&
       terms.every((term) => row.dataset.search?.includes(term));
-    row.hidden = !(
-      matches &&
-      (expanded || filtering || row.dataset.featured === "true")
-    );
+    row.hidden = !matches;
     if (!row.hidden) count++;
   });
   viewLabel.textContent = filtering
     ? "Filtered bibliography"
-    : expanded
-      ? "Complete bibliography"
-      : "Selected publications";
+    : "Complete bibliography";
   emptyState.hidden = count !== 0;
   status.hidden = !announce;
   status.textContent = filtering
     ? `${count} of ${rows.length} publications`
-    : `${count} ${expanded ? "publications" : "selected publications"}`;
-  toggle.hidden = filtering;
-  toggle.setAttribute("aria-expanded", String(expanded));
-  toggle.innerHTML = expanded
-    ? 'Show selected publications <span aria-hidden="true">↑</span>'
-    : `View all ${rows.length} publications <span aria-hidden="true">↓</span>`;
+    : `${count} publications`;
 }
 search.addEventListener("input", () => filterPublications());
 year.addEventListener("change", () => filterPublications());
-toggle.addEventListener("click", () => {
-  expanded = !expanded;
-  filterPublications();
-  if (!expanded)
-    document
-      .querySelector("#publications")
-      ?.scrollIntoView({ behavior: "instant" });
-});
 document.querySelector("#clear-filters")?.addEventListener("click", () => {
   search.value = "";
   year.value = "all";

@@ -113,9 +113,10 @@ test("manual metrics show only provided figures with their own date and source",
     },
     "2026-10-19",
   );
-  assert.ok(html.includes("Manual snapshot · 20 Oct 2026"));
+  assert.ok(html.includes("As of 20 Oct 2026"));
   assert.ok(html.includes("<dd>4</dd>"));
   assert.ok(!html.includes("<dt>Citations</dt>"));
   assert.ok(!html.includes("<dd>0</dd>"));
-  assert.ok(html.includes("not an API-verified value"));
+  assert.ok(html.includes("confirmed by Mamyr Altaibek"));
+  assert.ok(!/manual snapshot|API/i.test(html));
 });

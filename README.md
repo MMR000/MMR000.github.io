@@ -35,7 +35,7 @@ Inspect the page at 390, 768, 1280 and 1440 pixels, in both color modes, with ke
 
 ## How the site works
 
-The site is static Vite and TypeScript, with no application backend. `scripts/render-site.mjs` reads structured data and generates `index.html` during development and production builds. The HTML contains the biography and complete publication list for search engines and visitors without JavaScript. Edit source data or the renderer rather than generated `index.html`. `src/main.ts` progressively enhances the page with publication filtering and a color-mode control. `vite.config.ts` sets the project-site base path.
+The site is static Vite and TypeScript, with no application backend. `scripts/render-site.mjs` reads structured data and generates `index.html` during development and production builds. The HTML contains the biography and complete publication list for search engines and visitors without JavaScript. Edit source data or the renderer rather than generated `index.html`. All 20 publications are displayed immediately, with no expansion button. `src/main.ts` progressively enhances the page with publication filtering and a color-mode control. `vite.config.ts` sets the project-site base path.
 
 - `data/profile.json`: verified identity, affiliation, research interests, profile IDs, email, portrait and optional CV path.
 - `data/publications.json`: editable bibliography, DOI links and source-specific metadata.
