@@ -201,7 +201,7 @@ nav a[aria-current]::after {
   display: none;
 }
 .hero {
-  padding-top: 87px;
+  padding-top: 60px;
   display: grid;
   grid-template-columns: 1fr 170px;
   column-gap: 75px;
@@ -220,7 +220,7 @@ h1 {
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.04em;
-  margin: 23px 0 18px;
+  margin: 18px 0 14px;
 }
 .name-period {
   color: var(--accent);
@@ -246,7 +246,7 @@ h1 {
   padding: 0;
 }
 .hero .text-link {
-  margin-top: 28px;
+  margin-top: 20px;
 }
 .text-link span {
   font-size: 19px;
@@ -279,8 +279,8 @@ h1 {
   flex-wrap: wrap;
   gap: 30px;
   border-top: 1px solid var(--line);
-  margin-top: 57px;
-  padding: 23px 0;
+  margin-top: 36px;
+  padding: 18px 0;
 }
 .profile-links a {
   display: inline-flex;
@@ -298,8 +298,8 @@ h1 {
   display: grid;
   grid-template-columns: 210px 1fr;
   gap: 30px;
-  padding-top: 55px;
-  padding-bottom: 61px;
+  padding-top: 34px;
+  padding-bottom: 38px;
 }
 .section-label .section-number {
   font-size: 10px;
@@ -325,7 +325,7 @@ h1 {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 38px;
-  margin-top: 25px;
+  margin-top: 18px;
 }
 .about-columns p {
   font-size: 14px;
@@ -335,7 +335,7 @@ h1 {
   color: var(--ink);
 }
 .section-intro {
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 .section-description {
   font-family: var(--serif);
@@ -374,7 +374,7 @@ h1 {
 .research-footnote {
   font-size: 11px;
   color: var(--secondary);
-  margin-top: 27px;
+  margin-top: 18px;
 }
 .download-link {
   display: inline-flex;
@@ -464,7 +464,7 @@ h1 {
   display: grid;
   grid-template-columns: 50px 1fr;
   gap: 16px;
-  padding: 29px 0;
+  padding: 22px 0;
   border-bottom: 1px solid var(--line);
 }
 .pub-year {
@@ -667,8 +667,8 @@ h1 {
   color: var(--secondary);
 }
 .contact-section {
-  padding-top: 60px;
-  padding-bottom: 64px;
+  padding-top: 38px;
+  padding-bottom: 42px;
 }
 .contact-heading {
   font-family: var(--serif);
@@ -694,7 +694,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 .contact-details p {
   font-size: 11px;
@@ -719,10 +719,10 @@ h1 {
 }
 @media (min-width: 1450px) {
   .hero {
-    padding-top: 97px;
+    padding-top: 64px;
   }
   .hero .profile-links {
-    margin-top: 64px;
+    margin-top: 40px;
   }
 }
 @media (max-width: 1000px) {
@@ -732,7 +732,7 @@ h1 {
   }
   .hero {
     column-gap: 35px;
-    padding-top: 65px;
+    padding-top: 48px;
   }
   .section {
     grid-template-columns: 155px 1fr;
@@ -803,9 +803,9 @@ h1 {
     padding-block: 9px;
   }
   .hero {
-    padding-top: 43px;
+    padding-top: 30px;
     grid-template-columns: 1fr 108px;
-    gap: 22px;
+    gap: 18px;
   }
   .hero-intro {
     display: contents;
@@ -826,7 +826,7 @@ h1 {
   }
   .portrait {
     grid-column: 2;
-    grid-row: 2/5;
+    grid-row: 2/4;
     padding: 0;
     align-self: start;
   }
@@ -873,9 +873,9 @@ h1 {
   }
   .section {
     grid-template-columns: 1fr;
-    gap: 23px;
-    padding-top: 32px;
-    padding-bottom: 38px;
+    gap: 18px;
+    padding-top: 24px;
+    padding-bottom: 28px;
   }
   .section-label {
     display: flex;
@@ -896,8 +896,8 @@ h1 {
   }
   .about-columns {
     grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 22px;
+    gap: 12px;
+    margin-top: 16px;
   }
   .about-columns p {
     font-size: 13px;
@@ -908,7 +908,7 @@ h1 {
   }
   .research-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 18px;
   }
   .research-grid article {
     display: grid;
@@ -932,7 +932,7 @@ h1 {
     font-size: 12px;
   }
   .research-footnote {
-    margin-top: 23px;
+    margin-top: 16px;
     font-size: 10px;
   }
   .download-link {
@@ -970,7 +970,7 @@ h1 {
   .publication {
     grid-template-columns: 35px 1fr;
     gap: 10px;
-    padding: 25px 0;
+    padding: 20px 0;
   }
   .pub-year {
     font-size: 11px;
